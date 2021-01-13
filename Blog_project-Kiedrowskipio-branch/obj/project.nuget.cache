@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zVbo1Vygw9naXC02ztIWUqPc8gXst9a59nDWNMoATA1bnEVzP/BbSm6KEo+fwVK13E42x4p0Nl24Ay0VP05qHA==",
+  "dgSpecHash": "HrAJjr5pk3jUq1gDr0JuANoH21T05IFr0Ph6PB3PfPeZMrc4PTSsEtDMBTsTHqbsU6WEJYiLBEVT8VsOZuN2xQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kiedr\\OneDrive\\OneDrive\\Pulpit\\kibel\\kał2\\Blog_project-Kiedrowskipio-branch\\Blog_project.csproj",
+  "projectFilePath": "O:\\Nie gaming\\Git Repos\\Blog_project-Kiedrowskipio-branch\\Blog_project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kiedr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kiedr\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.1\\microsoft.aspnetcore.cryptography.internal.5.0.1.nupkg.sha512",

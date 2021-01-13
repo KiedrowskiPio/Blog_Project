@@ -30,5 +30,7 @@ namespace Blog_project.Models
         [DisplayFormat(DataFormatString ="{0: dd-MMM-yyyy}", ApplyFormatInEditMode =true)]
         [DisplayName("Published on:")]
         public DateTime publishedDate { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

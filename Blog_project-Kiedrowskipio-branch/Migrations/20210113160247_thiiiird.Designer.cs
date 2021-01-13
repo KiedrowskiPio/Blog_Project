@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog_project.Migrations
 {
     [DbContext(typeof(BlogDBContext))]
-    [Migration("20210111171203_Zdjecia2")]
-    partial class Zdjecia2
+    [Migration("20210113160247_thiiiird")]
+    partial class thiiiird
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,19 +21,27 @@ namespace Blog_project.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("Blog_project.Models.Image", b =>
+            modelBuilder.Entity("Blog_project.Models.Comment", b =>
                 {
-                    b.Property<int>("ImageId")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Title")
+                    b.Property<int>("postId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("text")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ImageId");
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Image");
+                    b.HasKey("id");
+
+                    b.HasIndex("postId");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Blog_project.Models.Post", b =>
@@ -43,8 +51,17 @@ namespace Blog_project.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<byte[]>("image")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<DateTime>("publishedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("subtitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("tag")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("text")
                         .HasColumnType("nvarchar(max)");
@@ -52,12 +69,26 @@ namespace Blog_project.Migrations
                     b.Property<string>("title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("userId")
-                        .HasColumnType("int");
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
                     b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("Blog_project.Models.Comment", b =>
+                {
+                    b.HasOne("Blog_project.Models.Post", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("postId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Blog_project.Models.Post", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

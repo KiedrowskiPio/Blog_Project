@@ -2,7 +2,7 @@
 
 namespace Blog_project.Migrations
 {
-    public partial class Zdjecia2 : Migration
+    public partial class thiiiird : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

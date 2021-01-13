@@ -13,6 +13,6 @@ namespace Blog_project.Data
         {
         }
 
-        public object Post { get; set; }
+        //public object Post { get; set; }
     }
 }
